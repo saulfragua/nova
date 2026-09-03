@@ -1,0 +1,68 @@
+# ============================================================================
+# NOVA - Apache Configuration
+# ============================================================================
+
+RewriteEngine On
+
+# ============================================================================
+# BASE
+# ============================================================================
+# Si NOVA está instalado en:
+#
+# http://localhost/nova/public/
+#
+# puedes dejar RewriteBase /nova/public/
+#
+# Si está configurado como VirtualHost apuntando directamente a public/,
+# puedes comentar esta línea.
+# ============================================================================
+
+RewriteBase /nova/public/
+
+
+# ============================================================================
+# PROTECCIÓN DE ARCHIVOS
+# ============================================================================
+
+# No permitir acceso directo a archivos sensibles
+<FilesMatch "^(\.env|composer\.json|composer\.lock|\.gitignore)$">
+    Require all denied
+</FilesMatch>
+
+
+# ============================================================================
+# ARCHIVOS Y DIRECTORIOS EXISTENTES
+# ============================================================================
+# Si el archivo o directorio existe físicamente,
+# Apache lo sirve directamente.
+# ============================================================================
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+
+# ============================================================================
+# ROUTER AUTOMÁTICO
+# ============================================================================
+# Todo lo demás pasa por:
+#
+# public/index.php
+#
+# Ejemplos:
+#
+# /usuarios
+# /usuarios/crear
+# /usuarios/editar/15
+# /vehiculos
+# /vehiculos/editar/20
+# ============================================================================
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+
+# ============================================================================
+# RUTA RAÍZ
+# ============================================================================
+
+RewriteRule ^$ index.php [QSA,L]
