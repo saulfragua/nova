@@ -18,22 +18,6 @@ if (!defined('APP_VERSION')) {
     define('APP_VERSION', '1.0.0');
 }
 
-
-/*
-|--------------------------------------------------------------------------
-| ENTORNO
-|--------------------------------------------------------------------------
-*/
-
-if (!defined('APP_ENV')) {
-    define('APP_ENV', 'development');
-}
-
-if (!defined('APP_DEBUG')) {
-    define('APP_DEBUG', APP_ENV === 'development');
-}
-
-
 /*
 |--------------------------------------------------------------------------
 | RUTAS DEL SISTEMA

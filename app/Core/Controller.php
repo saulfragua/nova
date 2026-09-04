@@ -10,13 +10,24 @@ abstract class Controller
     /**
      * Carga una vista.
      *
+     * Por defecto utiliza el layout principal.
+     *
      * Ejemplo:
+     *
+     * $this->view('dashboard/index');
+     *
+     * También permite enviar datos:
+     *
      * $this->view('usuarios/index', [
      *     'usuarios' => $usuarios
      * ]);
      */
-    protected function view(string $view, array $data = []): void
-    {
+    protected function view(
+        string $view,
+        array $data = [],
+        ?string $layout = 'app'
+    ): void {
+
         $viewPath = __DIR__ . '/../Views/' . $view . '.php';
 
         if (!file_exists($viewPath)) {
@@ -25,7 +36,7 @@ abstract class Controller
             );
         }
 
-        /*
+        /**
          * Convierte:
          *
          * ['usuarios' => $usuarios]
@@ -36,7 +47,50 @@ abstract class Controller
          */
         extract($data, EXTR_SKIP);
 
+        /**
+         * Si no queremos layout,
+         * cargamos solamente la vista.
+         *
+         * Ejemplo:
+         *
+         * $this->view('login/index', [], null);
+         */
+        if ($layout === null) {
+            require $viewPath;
+            return;
+        }
+
+        /**
+         * Ruta del layout.
+         */
+        $layoutPath = __DIR__
+            . '/../Views/layouts/'
+            . $layout
+            . '.php';
+
+        if (!file_exists($layoutPath)) {
+            throw new \RuntimeException(
+                "El layout no existe: {$layoutPath}"
+            );
+        }
+
+        /**
+         * Variable disponible dentro
+         * del layout.
+         *
+         * El layout podrá cargar la vista
+         * mediante $content.
+         */
+        ob_start();
+
         require $viewPath;
+
+        $content = ob_get_clean();
+
+        /**
+         * Cargar layout principal.
+         */
+        require $layoutPath;
     }
 
     /**
@@ -59,7 +113,9 @@ abstract class Controller
     ): never {
         http_response_code($status);
 
-        header('Content-Type: application/json; charset=utf-8');
+        header(
+            'Content-Type: application/json; charset=utf-8'
+        );
 
         echo json_encode(
             $data,
@@ -103,9 +159,11 @@ abstract class Controller
      */
     protected function isAjax(): bool
     {
-        return isset($_SERVER['HTTP_X_REQUESTED_WITH'])
-            && strtolower(
-                $_SERVER['HTTP_X_REQUESTED_WITH']
-            ) === 'xmlhttprequest';
+        return isset(
+            $_SERVER['HTTP_X_REQUESTED_WITH']
+        )
+        && strtolower(
+            $_SERVER['HTTP_X_REQUESTED_WITH']
+        ) === 'xmlhttprequest';
     }
 }

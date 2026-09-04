@@ -273,89 +273,119 @@ require_once dirname(__DIR__, 3) . '/config/config.php';
                          LOGO DESKTOP
                     ================================================== -->
 
-                    <div
-                        class="
-                            mb-12
-                            text-center
-                        "
-                    >
+<div
+    class="
+        mb-12
+        text-center
+    "
+>
 
-                        <img
-                            src="<?= ASSETS_URL ?>/img/logo.png"
-                            alt="<?= APP_NAME ?> - <?= APP_DESCRIPTION ?>"
-                            class="
-                                mx-auto
-                                h-auto
-                                w-56
-                                object-contain
-                                xl:w-64
-                            "
-                            onerror="this.style.display='none';"
-                        >
+    <img
+        src="<?= ASSETS_URL ?>/img/logo.png"
+        alt="<?= APP_NAME ?> - <?= APP_DESCRIPTION ?>"
+        class="
+            mx-auto
+            h-auto
+            w-56
+            object-contain
+            xl:w-64
+        "
+        onerror="this.style.display='none';"
+    >
 
-                    </div>
+    <p
+        class="
+            mt-1
+            text-3xl
+            font-semibold
+            leading-none
+            tracking-tight
+            text-white
+        "
+    >
+        <?= APP_NAME ?>
+    </p>
+
+    <p
+        class="
+            mt-1
+            text-xs
+            font-medium
+            uppercase
+            leading-none
+            tracking-[0.12em]
+            text-slate-400
+        "
+    >
+        <?= APP_DESCRIPTION ?>
+    </p>
+
+</div>
+
 
 
                     <!-- =================================================
                          MENSAJE
                     ================================================== -->
 
-                    <div
-                        class="
-                            mb-12
-                        "
-                    >
+<div 
+    class=" 
+        mb-12
+        text-center
+    " 
+> 
 
-                        <h1
-                            class="
-                                text-3xl
-                                font-bold
-                                leading-tight
-                                tracking-tight
-                                xl:text-4xl
-                            "
-                        >
+    <h1 
+        class=" 
+            text-3xl 
+            font-bold 
+            leading-tight 
+            tracking-tight 
+            xl:text-4xl 
+        " 
+    > 
 
-                            Gestión inteligente
+        Gestión inteligente 
 
-                            <br>
+        <br> 
 
-                            para
+        para 
 
-                            <span
-                                class="
-                                    bg-gradient-to-r
-                                    from-nova-blue
-                                    to-nova-violet
-                                    bg-clip-text
-                                    text-transparent
-                                "
-                            >
+        <span 
+            class=" 
+                bg-gradient-to-r 
+                from-nova-blue 
+                to-nova-violet 
+                bg-clip-text 
+                text-transparent 
+            " 
+        > 
 
-                                crecer juntos
+            crecer juntos 
 
-                            </span>
+        </span> 
 
-                        </h1>
+    </h1> 
 
 
-                        <p
-                            class="
-                                mt-5
-                                max-w-lg
-                                text-base
-                                leading-relaxed
-                                text-nova-muted
-                                xl:text-lg
-                            "
-                        >
+    <p 
+        class=" 
+            mt-5 
+            max-w-lg 
+            mx-auto
+            text-base 
+            leading-relaxed 
+            text-nova-muted 
+            xl:text-lg 
+        " 
+    > 
 
-                            Controla tus clientes, créditos,
-                            pagos y cobranza desde un solo lugar.
+        Controla tus clientes, créditos, 
+        pagos y cobranza desde un solo lugar. 
 
-                        </p>
+    </p> 
 
-                    </div>
+</div>
 
 
                     <!-- =================================================
@@ -676,28 +706,54 @@ require_once dirname(__DIR__, 3) . '/config/config.php';
                          LOGO MOBILE
                     ================================================== -->
 
-                    <div
-                        class="
-                            mb-8
-                            text-center
-                            lg:hidden
-                        "
-                    >
+<div
+    class="
+        mb-8
+        text-center
+        lg:hidden
+    "
+>
 
-                        <img
-                            src="<?= ASSETS_URL ?>/img/logo.png"
-                            alt="<?= APP_NAME ?> - <?= APP_DESCRIPTION ?>"
-                            class="
-                                mx-auto
-                                h-auto
-                                w-44
-                                object-contain
-                                sm:w-52
-                            "
-                            onerror="this.style.display='none';"
-                        >
+    <img
+        src="<?= ASSETS_URL ?>/img/logo.png"
+        alt="<?= APP_NAME ?> - <?= APP_DESCRIPTION ?>"
+        class="
+            mx-auto
+            h-auto
+            w-44
+            object-contain
+            sm:w-52
+        "
+    >
 
-                    </div>
+    <p
+        class="
+            mt-1
+            text-3xl
+            font-semibold
+            leading-none
+            tracking-tight
+            text-white
+        "
+    >
+        <?= APP_NAME ?>
+    </p>
+
+    <p
+        class="
+            mt-1
+            text-xs
+            font-medium
+            uppercase
+            leading-none
+            tracking-[0.12em]
+            text-slate-400
+        "
+    >
+        <?= APP_DESCRIPTION ?>
+    </p>
+
+</div>
 
 
                     <!-- =================================================
@@ -762,12 +818,12 @@ require_once dirname(__DIR__, 3) . '/config/config.php';
                              FORMULARIO
                         ================================================== -->
 
-                        <form
-                            id="loginForm"
-                            method="POST"
-                            action=""
-                            autocomplete="off"
-                        >
+<form
+    id="loginForm"
+    method="POST"
+    action="<?= BASE_URL ?>/public/index.php?url=login"
+    autocomplete="off"
+>
 
 
                             <!-- =================================================
@@ -1283,66 +1339,67 @@ require_once dirname(__DIR__, 3) . '/config/config.php';
 
                 if (loginForm) {
 
-                    loginForm.addEventListener(
-                        'submit',
-                        function (event) {
+    loginForm.addEventListener(
+        'submit',
+        function (event) {
 
-                            event.preventDefault();
+            const usuario =
+                document
+                    .getElementById('usuario')
+                    .value
+                    .trim();
 
-
-                            const usuario =
-                                document
-                                    .getElementById('usuario')
-                                    .value
-                                    .trim();
-
-
-                            const passwordValue =
-                                document
-                                    .getElementById('password')
-                                    .value;
+            const passwordValue =
+                document
+                    .getElementById('password')
+                    .value;
 
 
-                            if (!usuario) {
+            if (!usuario) {
 
-                                alert(
-                                    'Por favor ingresa tu usuario.'
-                                );
+                event.preventDefault();
 
-                                return;
+                alert(
+                    'Por favor ingresa tu usuario.'
+                );
 
-                            }
+                return;
 
-
-                            if (!passwordValue) {
-
-                                alert(
-                                    'Por favor ingresa tu contraseña.'
-                                );
-
-                                return;
-
-                            }
+            }
 
 
-                            /*
-                            |--------------------------------------------------------------------------
-                            | POR AHORA
-                            |--------------------------------------------------------------------------
-                            | Aquí posteriormente conectaremos AJAX
-                            | con LoginController.
-                            |--------------------------------------------------------------------------
-                            */
+            if (!passwordValue) {
 
-                            console.log(
-                                'Login preparado:',
-                                usuario
-                            );
+                event.preventDefault();
 
-                        }
-                    );
+                alert(
+                    'Por favor ingresa tu contraseña.'
+                );
 
-                }
+                return;
+
+            }
+
+
+            /*
+            |--------------------------------------------------------------------------
+            | PERMITIR ENVÍO AL CONTROLADOR
+            |--------------------------------------------------------------------------
+            */
+
+            if (btnLogin) {
+
+                btnLogin.disabled = true;
+
+                btnLogin.querySelector('span').textContent =
+                    'Ingresando...';
+
+            }
+
+        }
+    );
+
+}
 
 
                 /*

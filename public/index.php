@@ -1,7 +1,7 @@
 <?php
 
 declare(strict_types=1);
-
+require_once dirname(__DIR__) . '/config/config.php';
 /*
 |--------------------------------------------------------------------------
 | NOVA - Front Controller
@@ -88,17 +88,17 @@ if ($appDebug) {
 |
 */
 
-define('APP_ENV', $appEnv);
+if (!defined('APP_ENV')) {
+    define('APP_ENV', $appEnv);
+}
 
-define(
-    'APP_ROOT',
-    $rootPath
-);
+if (!defined('APP_ROOT')) {
+    define('APP_ROOT', $rootPath);
+}
 
-define(
-    'APP_PUBLIC',
-    __DIR__
-);
+if (!defined('APP_PUBLIC')) {
+    define('APP_PUBLIC', __DIR__);
+}
 
 
 /*
