@@ -420,7 +420,7 @@ $currentPage = $currentPage ?? 'dashboard';
         <!-- PAGOS -->
 
         <a
-            href="<?= BASE_URL ?>/pagos"
+            href="<?= BASE_URL ?>/cobros"
             class="
                 group
                 mb-2
@@ -472,7 +472,7 @@ $currentPage = $currentPage ?? 'dashboard';
                     text-white
                 "
             >
-                Pagos
+                Cobros
             </span>
 
 
@@ -488,77 +488,6 @@ $currentPage = $currentPage ?? 'dashboard';
 
         </a>
 
-
-        <!-- COBRANZA -->
-
-        <a
-            href="<?= BASE_URL ?>/cobranza"
-            class="
-                group
-                mb-2
-                flex
-                h-11
-                items-center
-                gap-3
-                rounded-xl
-                px-3
-                transition
-                hover:bg-white/5
-            "
-        >
-
-            <span
-                class="
-                    flex
-                    h-10
-                    w-10
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-lg
-                    bg-red-500/10
-                    text-red-400
-                    transition
-                    group-hover:bg-red-500/20
-                "
-            >
-
-                <i
-                    class="
-                        fa-solid
-                        fa-shield-halved
-                        text-lg
-                    "
-                ></i>
-
-            </span>
-
-
-            <span
-                class="
-                    sidebar-text
-                    flex-1
-                    whitespace-nowrap
-                    text-sm
-                    font-medium
-                    text-white
-                "
-            >
-                Cobranza
-            </span>
-
-
-            <i
-                class="
-                    sidebar-text
-                    fa-solid
-                    fa-chevron-right
-                    text-xs
-                    text-slate-500
-                "
-            ></i>
-
-        </a>
 
 
         <!-- =================================================
@@ -837,76 +766,177 @@ $currentPage = $currentPage ?? 'dashboard';
         </p>
 
 
-        <!-- ADMINISTRACIÓN -->
+<!-- ADMINISTRACIÓN -->
+<div class="mb-2">
 
-        <a
-            href="<?= BASE_URL ?>/administracion"
+    <!-- Botón principal -->
+    <button
+        type="button"
+        id="administracionToggle"
+        class="
+            group
+            flex
+            h-11
+            w-full
+            items-center
+            gap-3
+            rounded-xl
+            px-3
+            text-left
+            transition
+            hover:bg-white/5
+        "
+    >
+
+        <!-- Icono -->
+        <span
             class="
-                group
-                mb-2
                 flex
-                h-11
+                h-10
+                w-10
+                shrink-0
                 items-center
-                gap-3
-                rounded-xl
-                px-3
+                justify-center
+                rounded-lg
+                bg-violet-500/10
+                text-violet-400
                 transition
-                hover:bg-white/5
+                group-hover:bg-violet-500/20
             "
         >
+            <i class="fa-solid fa-user-gear text-lg"></i>
+        </span>
 
-            <span
-                class="
-                    flex
-                    h-10
-                    w-10
-                    shrink-0
-                    items-center
-                    justify-center
-                    rounded-lg
-                    bg-violet-500/10
-                    text-violet-400
-                    transition
-                    group-hover:bg-violet-500/20
-                "
-            >
+        <!-- Texto -->
+        <span
+            class="
+                sidebar-text
+                flex-1
+                whitespace-nowrap
+                text-sm
+                font-medium
+                text-white
+            "
+        >
+            Administración
+        </span>
 
-                <i
-                    class="
-                        fa-solid
-                        fa-user-gear
-                        text-lg
-                    "
-                ></i>
+        <!-- Flecha -->
+        <i
+            id="administracionArrow"
+            class="
+                sidebar-text
+                fa-solid
+                fa-chevron-right
+                text-xs
+                text-slate-500
+                transition-transform
+                duration-200
+            "
+        ></i>
 
+    </button>
+
+
+    <!-- SUBMENÚ -->
+    <div
+        id="administracionMenu"
+        class="
+            hidden
+            mt-1
+            ml-3
+            space-y-1
+            border-l
+            border-white/10
+            pl-3
+        "
+    >
+
+        <!-- USUARIO -->
+        <a
+            href="<?= BASE_URL ?>/usuarios"
+            class="
+                flex
+                h-10
+                items-center
+                gap-3
+                rounded-lg
+                px-3
+                text-sm
+                text-slate-300
+                transition
+                hover:bg-white/5
+                hover:text-white
+            "
+        >
+            <span class="w-5 text-center text-violet-400">
+                <i class="fa-solid fa-user"></i>
             </span>
 
-
-            <span
-                class="
-                    sidebar-text
-                    flex-1
-                    whitespace-nowrap
-                    text-sm
-                    font-medium
-                    text-white
-                "
-            >
-                Administración
+            <span class="sidebar-text">
+                Usuario
             </span>
-
-
-            <i
-                class="
-                    sidebar-text
-                    fa-solid
-                    fa-chevron-right
-                    text-xs
-                    text-slate-500
-                "
-            ></i>
-
         </a>
+
+
+        <!-- RUTA -->
+        <a
+            href="<?= BASE_URL ?>/rutas"
+            class="
+                flex
+                h-10
+                items-center
+                gap-3
+                rounded-lg
+                px-3
+                text-sm
+                text-slate-300
+                transition
+                hover:bg-white/5
+                hover:text-white
+            "
+        >
+            <span class="w-5 text-center text-blue-400">
+                <i class="fa-solid fa-route"></i>
+            </span>
+
+            <span class="sidebar-text">
+                Ruta
+            </span>
+        </a>
+
+
+        <!-- WHATSAPP -->
+        <a
+            href="<?= BASE_URL ?>/whatsapp"
+            class="
+                flex
+                h-10
+                items-center
+                gap-3
+                rounded-lg
+                px-3
+                text-sm
+                text-slate-300
+                transition
+                hover:bg-white/5
+                hover:text-white
+            "
+        >
+            <span class="w-5 text-center text-green-400">
+                <i class="fa-brands fa-whatsapp"></i>
+            </span>
+
+            <span class="sidebar-text">
+                WhatsApp
+            </span>
+        </a>
+
+    </div>
+
+</div>
+
+
 
     </nav>
 
@@ -1257,5 +1287,23 @@ document.addEventListener(
 
     }
 );
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const toggle = document.getElementById('administracionToggle');
+    const menu = document.getElementById('administracionMenu');
+    const arrow = document.getElementById('administracionArrow');
+
+    if (!toggle || !menu || !arrow) return;
+
+    toggle.addEventListener('click', function () {
+
+        menu.classList.toggle('hidden');
+
+        arrow.classList.toggle('rotate-90');
+
+    });
+
+});
 
 </script>

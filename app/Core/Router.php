@@ -234,7 +234,7 @@ class Router
 
         $view =
             __DIR__ .
-            '/../Views/errores/404.php';
+            '/../Views/errors/404.php';
 
         if (file_exists($view)) {
 
