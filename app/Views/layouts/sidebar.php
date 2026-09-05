@@ -43,11 +43,11 @@ $currentPage = $currentPage ?? 'dashboard';
     <div
         class="
             flex
-            h-28
+            h-24
             shrink-0
             items-center
             justify-between
-            px-6
+            px-5
         "
     >
 
@@ -67,8 +67,8 @@ $currentPage = $currentPage ?? 'dashboard';
                 src="<?= ASSETS_URL ?>/img/logo.png"
                 alt="<?= APP_NAME ?>"
                 class="
-                    h-12
-                    w-12
+                    h-10
+                    w-10
                     shrink-0
                     object-contain
                 "
@@ -160,8 +160,8 @@ $currentPage = $currentPage ?? 'dashboard';
             flex-1
             overflow-y-auto
             overflow-x-hidden
-            px-4
-            pb-6
+            px-3
+            pb-4
         "
     >
 
@@ -191,11 +191,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/dashboard"
             class="
                 group
-                mb-6
+                mb-2
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 border
                 px-3
@@ -279,11 +279,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/clientes"
             class="
                 group
-                mb-3
+                mb-2
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 px-3
                 transition
@@ -351,11 +351,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/creditos"
             class="
                 group
-                mb-3
+                mb-2
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 px-3
                 transition
@@ -423,11 +423,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/pagos"
             class="
                 group
-                mb-3
+                mb-2
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 px-3
                 transition
@@ -495,11 +495,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/cobranza"
             class="
                 group
-                mb-6
+                mb-2
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 px-3
                 transition
@@ -587,11 +587,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/caja"
             class="
                 group
-                mb-3
+                mb-2
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 px-3
                 transition
@@ -659,11 +659,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/gastos"
             class="
                 group
-                mb-6
+                mb-2   
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 px-3
                 transition
@@ -751,11 +751,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/reportes"
             class="
                 group
-                mb-6
+                mb-2   
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 px-3
                 transition
@@ -843,11 +843,11 @@ $currentPage = $currentPage ?? 'dashboard';
             href="<?= BASE_URL ?>/administracion"
             class="
                 group
-                mb-6
+                mb-2
                 flex
-                h-14
+                h-11
                 items-center
-                gap-4
+                gap-3
                 rounded-xl
                 px-3
                 transition
