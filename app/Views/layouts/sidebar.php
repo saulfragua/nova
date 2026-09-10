@@ -725,6 +725,28 @@ $currentPage = $currentPage ?? 'dashboard';
             border-white/10
             pl-3
         ">
+                <!-- CONFIGURACION -->
+                <a href="<?= BASE_URL ?>/configuracion" class="
+                flex
+                h-10
+                items-center
+                gap-3
+                rounded-lg
+                px-3
+                text-sm
+                text-slate-300
+                transition
+                hover:bg-white/5
+                hover:text-white
+            ">
+                    <span class="w-5 text-center text-grey-400">
+                        <i class="fa-solid fa-cog"></i>
+                    </span>
+
+                    <span class="sidebar-text">
+                        Configuración
+                    </span>
+                </a>
 
                 <!-- USUARIO -->
                 <a href="<?= BASE_URL ?>/usuarios" class="
